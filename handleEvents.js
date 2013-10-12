@@ -2,7 +2,7 @@ var usuarios = []
 var usernames = {}
 
 var mongoose = require('mongoose')
-var db = mongoose.createConnection('mongodb://juanvc123:juandavid123@ds049568.mongolab.com:49568/chat-social')
+var db = mongoose.createConnection('mongodb://root:mongodb@ds049568.mongolab.com:49568/chat-social')
 
 db.on('error', console.log.bind(console, 'Error de conexión:'))
 db.once('connected', function callback () {
