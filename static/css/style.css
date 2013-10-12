@@ -1,0 +1,392 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  background: #404040;
+  height: 100%;
+}
+section {
+  background: transparent;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font: normal normal 14px arial;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+}
+.form-signin {
+  background: rgba(11,222,221,0.8);
+  -ms-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  color: #fff;
+  margin-top: -240px;
+  margin-left: -150px;
+  padding: 0;
+  position: fixed;
+  left: 50%;
+  text-align: center;
+  width: 300px;
+  z-index: 100;
+}
+.form-signin h2 {
+  background: rgba(11,222,221,0.9);
+  -ms-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  padding: 3px;
+  width: 100%;
+  top: 0;
+}
+.form-signin .wrap_form_signin {
+  padding: 10px;
+}
+.form-signin .wrap_form_signin input[type=text] {
+  border: 2px solid #40e0d0;
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  display: block;
+  font: normal normal 16px arial;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  outline: none;
+  padding: 5px;
+}
+.form-signin .wrap_form_signin button {
+  background: #933493;
+  color: #fff;
+  cursor: pointer;
+  font: bold normal 14px arial;
+  padding: 4px 7px;
+}
+.form-signin .wrap_form_signin button:hover {
+  background: #be47be;
+}
+.content_top {
+  background: #46473d;
+  border: 1px solid #e1e2de;
+  -ms-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.content_top .nameUsuario {
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+}
+.content_top .signOut {
+  background: #008080;
+  color: #fff;
+  cursor: pointer;
+  font: bold normal 12px helvetica;
+  padding: 5px;
+  right: 0;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.content_top .signOut:hover {
+  background: #005959;
+}
+.content_top .countChar {
+  background: #616354;
+  border: 1px solid transparent;
+  border-top: 0;
+  -ms-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  -o-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  color: #f00;
+  padding: 5px;
+  text-shadow: 0px 1px rgba(0,0,0,0.5);
+}
+.form_messageIn .inputMessage {
+  background: #616354;
+  border: 1px solid transparent;
+  border-top-color: #6f6f6f;
+  border-bottom: 0;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  font: normal normal 14px arial;
+  margin: 0 auto;
+  outline: none;
+  padding: 7px;
+  padding-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+.box_priv {
+  background: #1cad9f;
+  border: 1px solid #10635b;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  color: #fff;
+  display: none;
+  font: bold normal 16px helvetica;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -150px;
+  padding: 0;
+  position: fixed;
+  width: 300px;
+  z-index: 100;
+}
+.box_priv label {
+  background: #10635b;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  padding: 3px;
+  width: 100%;
+  top: 0;
+}
+.box_priv form {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+.box_priv form input {
+  background: #dc143c;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin: 5px auto;
+  padding: 5px;
+  width: 100px;
+}
+.box_priv form input:hover {
+  background: #ed395d;
+}
+.box_priv form span {
+  display: block;
+  width: 100%;
+}
+.box_priv form textarea {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #737373;
+  display: block;
+  font: normal normal 16px arial;
+  padding: 5px;
+  resize: none;
+  width: 100%;
+}
+.content_messages {
+  background: transparent;
+  box-shadow: 0 0 7px rgba(0,0,0,0.7);
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 70%;
+  margin: 0 auto;
+  width: 100%;
+}
+.content_messages .messageWrap {
+  background: #4f4f4f;
+  border-bottom: 1px solid #696969;
+  border-bottom: 1px solid #696969;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+}
+.content_messages .messageWrap .divTime {
+  font-size: 12px;
+  padding-right: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.content_messages .messageWrap .divUser {
+  font-weight: bold;
+  color: #0ff;
+  text-shadow: 0px 1px rgba(0,0,0,0.7);
+}
+.content_messages .messageWrap .divMessage {
+  word-wrap: break-word;
+}
+.content_messages .messageWrap_Mio {
+  background: #616161;
+}
+.content_options {
+  width: 100%;
+}
+.content_options .optionMessages,
+.content_options .optionUsers,
+.content_options .optionPrivates {
+  border-right: thin solid #dadada;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: bold normal 12px arial;
+  padding: 2px 5px 3px 2px;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.content_options .optionMessages:hover,
+.content_options .optionUsers:hover,
+.content_options .optionPrivates:hover {
+  background: #068aec;
+}
+.content_users {
+  background: #6b6b6b;
+  box-shadow: 0 0 7px rgba(0,0,0,0.7);
+  display: none;
+  height: 70%;
+  margin: 0 auto;
+  width: 100%;
+}
+.content_users ul li {
+  background: #4f4f4f;
+  border-bottom: 1px solid #494949;
+  color: #0ff;
+  cursor: pointer;
+  word-wrap: break-word;
+  display: block;
+  font-weight: bold;
+  padding: 5px;
+  text-shadow: 0px 1px rgba(0,0,0,0.7);
+}
+.content_users ul li:hover {
+  background: #676767;
+}
+.content_privates {
+  background: transparent;
+  box-shadow: 0 0 7px rgba(0,0,0,0.7);
+  -ms-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  display: none;
+  height: 70%;
+  margin: 0 auto;
+  width: 100%;
+}
+.content_privates .messageWrap {
+  background: #4f4f4f;
+  border-bottom: 1px solid #696969;
+  border-bottom: 1px solid #696969;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+}
+.content_privates .messageWrap:hover {
+  content: 'asdsadsadsadsadasdasd';
+}
+.content_privates .messageWrap .divTime {
+  font-size: 12px;
+  padding-right: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.content_privates .messageWrap .divUser {
+  font-weight: bold;
+  color: #0ff;
+  text-shadow: 0px 1px rgba(0,0,0,0.7);
+}
+.content_privates .messageWrap .divMessage {
+  word-wrap: break-word;
+}
+.content_privates .messageWrap_Mio {
+  background: #616161;
+}
+.waitShow {
+  background: #dc143c;
+}
+.hablaA {
+  color: #fff;
+  font-weight: normal;
+}
+.content_privates .messageWrap .divUser {
+  color: #ffe449;
+}
+.userTarget {
+  color: #41dc14;
+  font-weight: bold;
+  padding-left: 4px;
+  text-shadow: 0px 1px rgba(0,0,0,0.7);
+}
+@media screen and (max-width: 720px) {
+  .box_priv {
+    margin-left: -120px;
+    width: 240px;
+  }
+  .form-signin {
+    margin-left: -120px;
+    width: 240px;
+  }
+}

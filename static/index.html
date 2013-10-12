@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html lang="es">
+	<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Chat social</title>			
+			<link rel="stylesheet" href="css/style.css">
+			<script src="librerias/jquery-1.10.2/jquery.js"></script>
+			<script src="/socket.io/socket.io.js"></script>
+			<script src="script.js"></script>
+	</head>
+	<body>
+		<section class="chat">
+			
+			<form class="form-signin" id="form-login">
+				<h2>Inicio de sesión</h2>
+				<div class="wrap_form_signin">
+					<input type="text" id="usuario" class="" placeholder="Usuario">
+					<input type="text" id="password" class="" placeholder="Contraseña temporal">
+					<div class="remember">
+						<input type="checkbox" id="rememberMe" value="recordame">
+						<label for="rememberMe">recordarme</label>
+					</div>
+					<button type="submit">Ingresar</button>
+				</div>				
+			</form>		
+			
+			<div class="content_top">
+				<label id="nameUsuario" class="nameUsuario">Usuario:</label>				
+				<button id="signOut" class="signOut">Cerrar sesión</button>
+				<form id="form_messageIn" class="form_messageIn">
+					<input type="text" id="inputMessage" class="inputMessage" maxlength="200" placeholder="Mensaje..." readonly>
+				</form>
+				<div class="countChar" id="countChar">200</div>		
+			</div>
+
+			<div class="content_options">
+				<div id="optionMessages" class="optionMessages" data-item="chat">Chat</div>
+				<div id="optionUsers" class="optionUsers" data-item="users">Usuarios</div>
+				<div id="optionPrivates" class="optionPrivates" data-item="privates">Mensajes Privados</div>
+			</div>
+
+			<div id="content_messages" class="content_messages"></div>
+			<div id="content_users" class="content_users">
+				<ul id="listaUsers"></ul>
+			</div>
+			<div id="content_privates" class="content_privates"></div>
+		</section>		
+	</body>
+</html>
