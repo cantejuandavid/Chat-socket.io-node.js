@@ -1,0 +1,27 @@
+{
+  "name": "chat-social",
+  "description": "chat hecho 100% en javascript",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "juan cante juanvc123@hotmail.com",
+  "repository": {
+  "start": "node app"
+  },
+ "author": "juan cante juanvc123@hotmail.com",
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/juanvc123/chat-social.git"
+  },
+  "dependencies": {
+    "express": "3.3.*",
+    "node-gyp": "0.10.*",
+    "socket.io": "0.9.*",
+    "mongoose": "3.7.*"
+  },
+  "engines": {
+    "node": "0.10.*",
+    "npm": "1.3.*"
+  }
+}
