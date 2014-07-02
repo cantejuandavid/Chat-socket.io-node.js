@@ -22,35 +22,28 @@ box-sizing()
 	margin 0
 	padding 0
 body,html
-	background #404040
+	background #fff
 	height 100%	
 section
 	background transparent
 	box-sizing()
 	font normal normal 14px arial
 	height 100%
-	margin 0 auto
-	padding 5px
+	margin 0 auto	
 	position relative
 	width 100%
 
 .form-signin
-	background rgba(11,222,221,.8)
-	border-radius(6px)
+	background #4D4D4D	
+	box-shadow 0 0 5px rgba(0,0,0,.2)
 	color white	
-	margin-top -240px
-	margin-left -150px
-	padding 0
-	position fixed
-	left 50%
-	text-align center
-	width 300px
+	text-align center	
 	z-index 100
 	h2
-		background rgba(11,222,221,.9)
-		border-radius(5px 5px 0 0)
+		background rgba(11,222,221,.9)		
 		box-sizing()
 		display block
+		margin 0
 		padding 3px	
 		width 100%
 		top 0
@@ -59,6 +52,7 @@ section
 		input[type=text]
 			border 2px solid turquoise 
 			border-radius(4px)
+			color #333
 			display block
 			font normal normal 16px arial
 			margin 0 auto
@@ -75,9 +69,8 @@ section
 				background lighten(#933493, 20%)
 
 .content_top
-	background #46473D
-	border 1px solid #E1E2DE
-	border-radius 6px
+	background #C4C4C4
+	border 1px solid #E1E2DE	
 	.nameUsuario
 		color white
 		font-weight bold
@@ -87,28 +80,28 @@ section
 		background #008080
 		color white
 		cursor pointer
-		font bold normal 12px helvetica
-		padding 5px
+		font-size 18px
+		padding 7px 7px
 		right 0
 		transition()
 		&:hover
-			background #005959
+			background #D20000
 	.countChar
-		background #616354
+		background #F9F9F9
 		border 1px solid transparent
 		border-top 0
-		border-radius 0 0 6px 6px
+		font-weight bold		
 		color red
 		padding 5px
 		text-shadow 0px 1px rgba(0,0,0,.5)
 
 .form_messageIn .inputMessage
-	background #616354
+	background #F9F9F9
 	border 1px solid transparent
 	border-top-color #6F6F6F
 	border-bottom 0
 	box-sizing()
-	color white
+	color #666666
 	font normal normal 14px arial
 	margin 0 auto
 	outline none
@@ -171,86 +164,97 @@ section
 
 .content_messages
 	background transparent
-	box-shadow 0 0 7px rgba(0,0,0,.7)
+	border 1px solid #fafafa
 	border-radius(4px)
 	height 70%
+	font-size 16px
 	margin 0 auto
 	width 100%
 	.messageWrap
-		background #4F4F4F
-		border-bottom 1px solid #696969		
-		border-bottom 1px solid #696969
+		background #fff
+		border-bottom 1px solid #F5F5F5				
 		box-sizing()
-		color white
-		padding 5px
+		color #333
+		cursor pointer
+		padding 10px
 		position relative
+		transition()
 		width 100%
 		.divTime
+			display none
 			font-size 12px
 			padding-right 2px
 			position absolute
 			right 0
+			transition()
 			top 0
 		.divUser
 			font-weight bold
-			color cyan
-			text-shadow 0px 1px rgba(0,0,0,.7)
+			margin-bottom 5px
+			color #00CACA			
 		.divMessage
 			word-wrap break-word
+		&:hover
+			background #FCFCFC
+			.divTime
+				transition()
+				display block
 	.messageWrap_Mio
-		background #616161	
-
+		background #EFEFEF	
+		.divUser
+			color #333
 .content_options	
 	width 100%
-	.optionMessages, .optionUsers, .optionPrivates
-		border-right thin solid #dadada
-		color white
+	text-align center
+	font-size 0
+	.optionMessages, .optionUsers, .optionPrivates		
+		border-right thin solid #F3F3F3
+		color #333
 		cursor pointer
 		display inline-block
-		font bold normal 12px arial
-		padding 2px 5px 3px 2px
+		vertical-align top
+		font-size 24px
+		padding 10px
 		transition()
 		&:hover
+			color #fff
 			background #068AEC
-
 .content_users
-	background #6B6B6B
-	box-shadow 0 0 7px rgba(0,0,0,.7)
+	border 1px solid #fafafa
+	background #fff	
 	display none
 	height 70%
 	margin 0 auto
 	width 100%
-	ul li
-		background #4f4f4f
-		border-bottom 1px solid #494949
-		color cyan
-		cursor pointer
-		word-wrap break-word
-		display block
-		font-weight bold
-		padding 5px
-		text-shadow 0px 1px rgba(0,0,0,.7)
-		&:hover
-			background #676767
+	ul 
+		li		
+			border 1px solid #E4E4E4		
+			cursor pointer
+			word-wrap break-word
+			display block
+			font-weight bold
+			font-size 16px
+			padding 15px
+			color crimson
+			&:hover
+				background #EFEFEF
+		
 .content_privates
 	background transparent
-	box-shadow 0 0 7px rgba(0,0,0,.7)
+	border 1px solid #fafafa
 	border-radius(4px)
 	display none
 	height 70%
 	margin 0 auto
 	width 100%
 	.messageWrap
-		background #4F4F4F
-		border-bottom 1px solid #696969		
-		border-bottom 1px solid #696969
+		background #fff
+		border-bottom 1px solid #EFEFEF				
 		box-sizing()
-		color white
+		color #333
 		padding 5px
 		position relative
 		width 100%
-		&:hover
-			content 'asdsadsadsadsadasdasd'
 		.divTime
 			font-size 12px
 			padding-right 2px
@@ -259,21 +263,29 @@ section
 			top 0
 		.divUser
 			font-weight bold
-			color cyan
-			text-shadow 0px 1px rgba(0,0,0,.7)
+			color cyan			
 		.divMessage
+			padding 10px
 			word-wrap break-word
 	.messageWrap_Mio
 		background #616161	
 
+.info
+	text-align center
+	color #A2A2A2 !important
+	font-weight 100 !important
+	font-size 16px
+	border 0
+	padding 20px
 .waitShow
 	background crimson
+	color #fff !important
 .hablaA
-	color #fff
+	color #333
 	font-weight normal
-.content_privates .messageWrap .divUser {
-	color #FFE449
-}
+.content_privates .messageWrap .divUser 
+	color orange
+
 .userTarget{
 	color #41DC14
 	font-weight bold	
@@ -283,8 +295,5 @@ section
 
 @media screen and (max-width: 720px)
 	.box_priv
-		margin-left -120px
-		width 240px
-	.form-signin
 		margin-left -120px
 		width 240px

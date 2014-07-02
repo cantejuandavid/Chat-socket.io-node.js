@@ -17,11 +17,11 @@ var server = http.createServer(app).listen(port, function() {
 })
 
 var io = require('socket.io').listen(server, {log: false})
-
+/*
 io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
-});
+});*/
 
 io.sockets.on('connection', function(socket) {
 
@@ -63,12 +63,12 @@ io.sockets.on('connection', function(socket) {
 			io.sockets.emit('reloadUsers', callback)
 		})
 	}
-
 	function sendPrivates(data) {
 		handleEvents.sendPrivates(data, function(callback) {
 			io.sockets.socket(callback.target).emit('messageRealTime', callback.data)
 		})
 	}
+	
 	socket.on('disconnect', function(){			
 		var data = {
 			name: socket.username

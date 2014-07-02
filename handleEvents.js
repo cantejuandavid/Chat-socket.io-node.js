@@ -2,14 +2,15 @@ var usuarios = []
 var usernames = {}
 
 var mongoose = require('mongoose')
-var db = mongoose.createConnection('mongodb://juanvc123:juandavid123@ds049568.mongolab.com:49568/chat-social')
+var db = mongoose.createConnection('mongodb://rooter:juandavid123@ds049568.mongolab.com:49568/chat-social')
+//var db = mongoose.createConnection('mongodb://localhost/chat')
 
 db.on('error', console.log.bind(console, 'Error de conexión:'))
 db.once('connected', function callback () {
     console.log('Conectado a mongodb')
 })
 db.once('open', function callback () {
-    console.log('Conectado con la DB')
+    console.log('Conectado con la DB Mongo')
 })
 
 var mensajes_Schema = require('./models/mensajes')
@@ -31,6 +32,7 @@ exports.signOut = function(data, callback) {
 exports.req_sesion = function(data, callback) {
 	var usuario = data.nombre
 	var password = data.password
+
 	var constant, passBD	
 	
 	usernames[data.nombre] = {
@@ -39,11 +41,10 @@ exports.req_sesion = function(data, callback) {
 	}
 
 	if(usuarios[usuario]){	
-		if(usuarios[usuario].password === password) {
+		if(usuarios[usuario].password === password)
 			callback({log:'bien', user: data})
-		} else {
-			callback({log:'passIncorrect'})
-		}		
+		else
+			callback({log:'passIncorrect'})		
 	}
 	else {		
 		usuarios[usuario] = data
@@ -67,7 +68,7 @@ exports.message = function(data, callback) {
 			console.log('NO SE PUDO CREAR ESTE PRODUCTO')
 		    console.log(err)
 		}
-		console.log('MESSAGE INSERTED MONGODB')
+		console.log('Mensaje guardado con éxito')
 	}
 }
 exports.reloadMessages = function(callback) {
@@ -76,10 +77,9 @@ exports.reloadMessages = function(callback) {
 
 	function onFind(err, mensajes) {
 		if(!err) {
-			console.log(mensajes)
 			callback(mensajes)
 		} else {
-			console.log('No se pudo reload mensajes')
+			console.log('No se pudo recargar los mensajes')
 		}
 	}
 }
@@ -91,7 +91,7 @@ exports.reloadUsers = function(callback){
 			id: usuarios[i].id
 		}
 		users[usuarios[i].nombre] = content
-	}
+	}	
 	callback(users)	
 }
 exports.sendPrivates = function(data, callback) {

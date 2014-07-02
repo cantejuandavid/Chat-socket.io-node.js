@@ -13,11 +13,11 @@ function cargaChat(){
 			nombre: local.nombre,
 			password: local.password
 		}
-		socket.emit('req-sesion', data)
-		$('#content_datos').show()
+		socket.emit('req-sesion', data)		
 	}
-	socket.emit('reloadMessages')
+
 	socket.emit('reloadUsers')
+	socket.emit('reloadMessages')
 }
 
 $(document).ready(function() {
@@ -29,6 +29,7 @@ $(document).ready(function() {
 	$('#form_messageIn, #form_priv').submit(function(e) {sendMessage(e)})
 	$('#optionMessages, #optionUsers, #optionPrivates').click(function(event){showDis(event)})
 })
+
 function sendPrivates(to) {
 	var box_priv = $('<div id="box_priv"></div>')
 	var form_priv = $('<form id="form_priv"></form>')
@@ -133,19 +134,30 @@ socket.on('reloadUsers', function(data) {reloadUsers(data)})
 
 
 function reloadUsers(data) {	
+	console.log(Object.keys(data).length)
+
 	$('#listaUsers').html('')	
-	for(var i in data) {
-		var ul = $('#listaUsers')
-		$('<li>'+data[i].nombre+'</li>').click(function(e){
-			if(globalUser !== undefined) {				
-				var ou = $(e.target)				
-				if(globalUser != ou.text()) {
-					sendPrivates(ou.text())
-					userTarget = ou.text()
-				}
-			}
-		}).appendTo(ul)		
+	var ul = $('#listaUsers')
+	if(localStorage['user']) {
+		if(Object.keys(data).length > 0) {
+			for(var i in data) {
+				
+				$('<li>'+data[i].nombre+'</li>').click(function(e){
+					if(globalUser !== undefined) {				
+						var ou = $(e.target)				
+						if(globalUser != ou.text()) {
+							sendPrivates(ou.text())
+							userTarget = ou.text()
+						}
+					}
+				}).appendTo(ul)	
+			}	
+		}
+		else
+			ul.html('<div class="info">Para poder ver los usuarios conectados debes estar logueado</div>')
 	}
+	else
+		ul.html('<div class="info">Para poder ver los usuarios conectados debes estar logueado</div>')
 }
 
 function res_usuario(data) {
@@ -153,9 +165,7 @@ function res_usuario(data) {
 	if(data.log == 'bien') {
 		per = true
 		form.find('.alert').remove()
-		form.animate({
-			marginTop: "-240px"
-		}, 300)
+		$('#formSignii').modal('hide')
 		$('#nameUsuario').text('#'+data.user.nombre)
 		globalUser = data.user.nombre
 
@@ -185,8 +195,7 @@ function signOut() {
 	userTarget = undefined
 	$('#box_priv').remove()
 	localStorage.clear()
-	$('#nameUsuario').text('')
-	$('#content_datos').hide()
+	$('#nameUsuario').text('Usuario:')	
 	per = false
 }
 function formateaDate(string, criterio) {	
@@ -204,8 +213,7 @@ function sendMessage(e) {
 	e.preventDefault()
 	var i = $(e.target)	
 	var input = $(i).find('.inputMessage')
-	var message = $.trim(input.val())
-	console.log('message: ' + message)
+	var message = $.trim(input.val())	
 	if(message.length <= 200) {
 		if(message !== ''){
 			var date = new Date()
@@ -256,6 +264,7 @@ function sendMessage(e) {
 	}
 }
 function messageRealTime(data) {
+	$('.info').remove()
 	var contenedor
 	var messageWrap = $('<div class="messageWrap"></div>')
 
