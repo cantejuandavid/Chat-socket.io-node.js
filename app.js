@@ -3,15 +3,17 @@ var app = express()
 var http = require('http')
 var path = require('path')
 var stylus = require('stylus')
+var nib = require('nib')
 var handleEvents = require('./handleEvents')
 var port = process.env.PORT || 5000
 
 app.configure(function() {	
 	app.use(stylus.middleware({
-		src: __dirname + '/public',
+		src: __dirname + '/static',
 		compile: compile
 	}));
-	app.use(require('stylus').middleware(__dirname + '/public'));
+	app.use(express.logger('dev'));
+	app.use(require('stylus').middleware(__dirname + '/static'));
 	app.use(express.static(path.join(__dirname,'static')))
 	app.get('*', function(req, res) {
 		res.send('URL INVÁlIDA',404)
