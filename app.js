@@ -2,14 +2,21 @@ var express = require('express')
 var app = express()
 var http = require('http')
 var path = require('path')
+var stylus = require('stylus')
 var handleEvents = require('./handleEvents')
 var port = process.env.PORT || 5000
 
 app.configure(function() {	
+	app.use(stylus.middleware({
+		src: __dirname + '/public',
+		compile: compile
+	}));
+	app.use(require('stylus').middleware(__dirname + '/public'));
 	app.use(express.static(path.join(__dirname,'static')))
 	app.get('*', function(req, res) {
 		res.send('URL INVÁlIDA',404)
 	})
+	
 })
 
 var server = http.createServer(app).listen(port, function() {
@@ -78,3 +85,10 @@ io.sockets.on('connection', function(socket) {
 		})
 	})
 })
+
+function compile(str, path) {
+	return stylus(str)
+		.set('filename', path)
+		.set('compress', true)
+		.use(nib())
+}

@@ -1,7 +1,7 @@
 *{border:0;margin:0;padding:0}
 body,html{background:#fff;height:100%}
 section{background:transparent;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font:normal normal 14px arial;height:100%;margin:0 auto;position:relative;width:100%}
-.form-signin{margin:0;background:#4d4d4d;box-shadow:0 0 5px rgba(0,0,0,0.2);color:#fff;text-align:center;z-index:100;}
+.form-signin{margin:0 !important;background:#4d4d4d;box-shadow:0 0 5px rgba(0,0,0,0.2);color:#fff;text-align:center;z-index:100;}
 .form-signin h2{background:rgba(11,222,221,0.9);-ms-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:block;margin:0;padding:3px;width:100%;top:0}
 .form-signin .wrap_form_signin{padding:10px;}
 .form-signin .wrap_form_signin input[type=text]{border:2px solid #40e0d0;-ms-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;color:#333;display:block;font:normal normal 16px arial;margin:0 auto;margin-bottom:4px;outline:none;padding:5px}
