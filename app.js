@@ -18,11 +18,11 @@ var server = http.createServer(app).listen(port, function() {
 
 var io = require('socket.io').listen(server, {log: false})
 <<<<<<< HEAD
-/*
+
 io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
-});*/
+});
 =======
 
 io.configure(function () { 
