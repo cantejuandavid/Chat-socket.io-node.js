@@ -2,15 +2,23 @@ var usuarios = []
 var usernames = {}
 
 var mongoose = require('mongoose')
+<<<<<<< HEAD
 var db = mongoose.createConnection('mongodb://rooter:juandavid123@ds049568.mongolab.com:49568/chat-social')
 //var db = mongoose.createConnection('mongodb://localhost/chat')
+=======
+var db = mongoose.createConnection('mongodb://juanvc123:juandavid123@ds049568.mongolab.com:49568/chat-social')
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 
 db.on('error', console.log.bind(console, 'Error de conexión:'))
 db.once('connected', function callback () {
     console.log('Conectado a mongodb')
 })
 db.once('open', function callback () {
+<<<<<<< HEAD
     console.log('Conectado con la DB Mongo')
+=======
+    console.log('Conectado con la DB')
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 })
 
 var mensajes_Schema = require('./models/mensajes')
@@ -32,7 +40,10 @@ exports.signOut = function(data, callback) {
 exports.req_sesion = function(data, callback) {
 	var usuario = data.nombre
 	var password = data.password
+<<<<<<< HEAD
 
+=======
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	var constant, passBD	
 	
 	usernames[data.nombre] = {
@@ -41,10 +52,18 @@ exports.req_sesion = function(data, callback) {
 	}
 
 	if(usuarios[usuario]){	
+<<<<<<< HEAD
 		if(usuarios[usuario].password === password)
 			callback({log:'bien', user: data})
 		else
 			callback({log:'passIncorrect'})		
+=======
+		if(usuarios[usuario].password === password) {
+			callback({log:'bien', user: data})
+		} else {
+			callback({log:'passIncorrect'})
+		}		
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	}
 	else {		
 		usuarios[usuario] = data
@@ -68,7 +87,11 @@ exports.message = function(data, callback) {
 			console.log('NO SE PUDO CREAR ESTE PRODUCTO')
 		    console.log(err)
 		}
+<<<<<<< HEAD
 		console.log('Mensaje guardado con éxito')
+=======
+		console.log('MESSAGE INSERTED MONGODB')
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	}
 }
 exports.reloadMessages = function(callback) {
@@ -77,9 +100,16 @@ exports.reloadMessages = function(callback) {
 
 	function onFind(err, mensajes) {
 		if(!err) {
+<<<<<<< HEAD
 			callback(mensajes)
 		} else {
 			console.log('No se pudo recargar los mensajes')
+=======
+			console.log(mensajes)
+			callback(mensajes)
+		} else {
+			console.log('No se pudo reload mensajes')
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 		}
 	}
 }
@@ -91,7 +121,11 @@ exports.reloadUsers = function(callback){
 			id: usuarios[i].id
 		}
 		users[usuarios[i].nombre] = content
+<<<<<<< HEAD
 	}	
+=======
+	}
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	callback(users)	
 }
 exports.sendPrivates = function(data, callback) {

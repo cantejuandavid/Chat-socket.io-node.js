@@ -13,11 +13,19 @@ function cargaChat(){
 			nombre: local.nombre,
 			password: local.password
 		}
+<<<<<<< HEAD
 		socket.emit('req-sesion', data)		
 	}
 
 	socket.emit('reloadUsers')
 	socket.emit('reloadMessages')
+=======
+		socket.emit('req-sesion', data)
+		$('#content_datos').show()
+	}
+	socket.emit('reloadMessages')
+	socket.emit('reloadUsers')
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 }
 
 $(document).ready(function() {
@@ -29,7 +37,10 @@ $(document).ready(function() {
 	$('#form_messageIn, #form_priv').submit(function(e) {sendMessage(e)})
 	$('#optionMessages, #optionUsers, #optionPrivates').click(function(event){showDis(event)})
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 function sendPrivates(to) {
 	var box_priv = $('<div id="box_priv"></div>')
 	var form_priv = $('<form id="form_priv"></form>')
@@ -134,6 +145,7 @@ socket.on('reloadUsers', function(data) {reloadUsers(data)})
 
 
 function reloadUsers(data) {	
+<<<<<<< HEAD
 	console.log(Object.keys(data).length)
 
 	$('#listaUsers').html('')	
@@ -158,6 +170,21 @@ function reloadUsers(data) {
 	}
 	else
 		ul.html('<div class="info">Para poder ver los usuarios conectados debes estar logueado</div>')
+=======
+	$('#listaUsers').html('')	
+	for(var i in data) {
+		var ul = $('#listaUsers')
+		$('<li>'+data[i].nombre+'</li>').click(function(e){
+			if(globalUser !== undefined) {				
+				var ou = $(e.target)				
+				if(globalUser != ou.text()) {
+					sendPrivates(ou.text())
+					userTarget = ou.text()
+				}
+			}
+		}).appendTo(ul)		
+	}
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 }
 
 function res_usuario(data) {
@@ -165,7 +192,13 @@ function res_usuario(data) {
 	if(data.log == 'bien') {
 		per = true
 		form.find('.alert').remove()
+<<<<<<< HEAD
 		$('#formSignii').modal('hide')
+=======
+		form.animate({
+			marginTop: "-240px"
+		}, 300)
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 		$('#nameUsuario').text('#'+data.user.nombre)
 		globalUser = data.user.nombre
 
@@ -195,7 +228,12 @@ function signOut() {
 	userTarget = undefined
 	$('#box_priv').remove()
 	localStorage.clear()
+<<<<<<< HEAD
 	$('#nameUsuario').text('Usuario:')	
+=======
+	$('#nameUsuario').text('')
+	$('#content_datos').hide()
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	per = false
 }
 function formateaDate(string, criterio) {	
@@ -213,7 +251,12 @@ function sendMessage(e) {
 	e.preventDefault()
 	var i = $(e.target)	
 	var input = $(i).find('.inputMessage')
+<<<<<<< HEAD
 	var message = $.trim(input.val())	
+=======
+	var message = $.trim(input.val())
+	console.log('message: ' + message)
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	if(message.length <= 200) {
 		if(message !== ''){
 			var date = new Date()
@@ -264,7 +307,10 @@ function sendMessage(e) {
 	}
 }
 function messageRealTime(data) {
+<<<<<<< HEAD
 	$('.info').remove()
+=======
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	var contenedor
 	var messageWrap = $('<div class="messageWrap"></div>')
 

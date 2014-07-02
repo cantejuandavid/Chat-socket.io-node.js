@@ -17,11 +17,19 @@ var server = http.createServer(app).listen(port, function() {
 })
 
 var io = require('socket.io').listen(server, {log: false})
+<<<<<<< HEAD
 /*
 io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
 });*/
+=======
+
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 
 io.sockets.on('connection', function(socket) {
 
@@ -63,12 +71,19 @@ io.sockets.on('connection', function(socket) {
 			io.sockets.emit('reloadUsers', callback)
 		})
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	function sendPrivates(data) {
 		handleEvents.sendPrivates(data, function(callback) {
 			io.sockets.socket(callback.target).emit('messageRealTime', callback.data)
 		})
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
 	socket.on('disconnect', function(){			
 		var data = {
 			name: socket.username
