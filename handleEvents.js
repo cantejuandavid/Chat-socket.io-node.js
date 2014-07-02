@@ -3,11 +3,15 @@ var usernames = {}
 
 var mongoose = require('mongoose')
 <<<<<<< HEAD
+<<<<<<< HEAD
 var db = mongoose.createConnection('mongodb://rooter:juandavid123@ds049568.mongolab.com:49568/chat-social')
 //var db = mongoose.createConnection('mongodb://localhost/chat')
 =======
 var db = mongoose.createConnection('mongodb://juanvc123:juandavid123@ds049568.mongolab.com:49568/chat-social')
 >>>>>>> ca90132f1d22d19100c5fe118428683ff252718f
+=======
+var db = mongoose.createConnection('mongodb://root:mongodb@ds049568.mongolab.com:49568/chat-social')
+>>>>>>> 18ea8d99b7123d1655c4cbcdbc744c56b0f95423
 
 db.on('error', console.log.bind(console, 'Error de conexión:'))
 db.once('connected', function callback () {
