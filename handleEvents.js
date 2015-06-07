@@ -1,7 +1,7 @@
 var usuarios = []
 var usernames = {}
 
-var db = require('mongoose.js')
+var db = require('./mongoose.js')
 
 var mensajes_Schema = require('./models/mensajes')
 var collectionMessage = db.model('mensajes', mensajes_Schema)
