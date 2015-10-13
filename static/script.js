@@ -1,4 +1,4 @@
-var socket  = io.connect('/'),
+var socket  = io(),
 	remember = false,
 	per = false,
 	globalUser,

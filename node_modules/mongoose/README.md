@@ -41,7 +41,7 @@ $ npm install mongoose
 
 ## Stability
 
-The current stable branch is [master](https://github.com/Automattic/mongoose/tree/master). The [3.8.x](https://github.com/Automattic/mongoose/tree/3.8.x) branch is for legacy support for the 3.x release series, which will continue to be maintained until September 1, 2015.
+The current stable branch is [master](https://github.com/Automattic/mongoose/tree/master). The [3.8.x](https://github.com/Automattic/mongoose/tree/3.8.x) branch contains legacy support for the 3.x release series, which will continue to be actively maintained until September 1, 2015.
 
 ## Overview
 
@@ -182,10 +182,10 @@ m.save(); // does not work b/c the default connection object was never connected
 In the first example snippet, we defined a key in the Schema that looks like:
 
 ```
-comments: [Comments]
+comments: [Comment]
 ```
 
-Where `Comments` is a `Schema` we created. This means that creating embedded documents is as simple as:
+Where `Comment` is a `Schema` we created. This means that creating embedded documents is as simple as:
 
 ```js
 // retrieve my model

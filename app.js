@@ -1,36 +1,32 @@
 var express = require('express')
 var app = express()
-var http = require('http')
 var path = require('path')
 var stylus = require('stylus')
+var morgan = require('morgan')
 var nib = require('nib')
 var handleEvents = require('./handleEvents')
 var port = process.env.PORT || 5000
 
-app.configure(function() {	
-	app.use(stylus.middleware({
-		src: __dirname + '/static',
-		compile: compile
-	}));
-	app.use(express.logger('dev'));
-	app.use(require('stylus').middleware(__dirname + '/static'));
-	app.use(express.static(path.join(__dirname,'static')))
-	app.get('*', function(req, res) {
-		res.send('URL INVÁlIDA',404)
-	})
-	
-})
+var server = require('http').Server(app)
+var io = require('socket.io')(server)
 
-var server = http.createServer(app).listen(port, function() {
+server.listen(port, function() {
 	console.log("Listening on " + port)
 })
 
-var io = require('socket.io').listen(server, {log: false})
+app.use(stylus.middleware({
+	src: __dirname + '/static',
+	compile: compile
+}));
+//app.use(morgan('combined'))
+app.use(require('stylus').middleware(__dirname + '/static'));
 
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
+app.use(express.static(path.join(__dirname, 'static')));
+
+app.get('*', function(req, res) {
+	res.send('URL INVÁlIDA',404)
+})
+
 
 io.sockets.on('connection', function(socket) {
 
@@ -75,7 +71,7 @@ io.sockets.on('connection', function(socket) {
 
 	function sendPrivates(data) {
 		handleEvents.sendPrivates(data, function(callback) {
-			io.sockets.socket(callback.target).emit('messageRealTime', callback.data)
+			io.to(callback.target).emit('messageRealTime', callback.data)
 		})
 	}
 	socket.on('disconnect', function(){			

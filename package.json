@@ -1,27 +1,36 @@
 {
   "name": "chat-social",
-  "description": "chat hecho 100% en javascript",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "description": "Chat social probando el potencial de Nodejs, socket.io y otras tecnologias",
+  "author": "Juan David Varga Cante <cantejuandavid@gmail.com>",
+  "private": true,
   "scripts": {
     "start": "node app"
   },
-  "author": "juan cante juanvc123@hotmail.com",
   "repository": {
-  "start": "node app"
-  },
- "author": "juan cante juanvc123@hotmail.com",
- "repository": {
     "type": "git",
-    "url": "https://github.com/juanvc123/chat-social.git"
+    "url": "https://github.com/cantejuandavid/chat-social"
+  },
+  "keywords": [
+    "chat",
+    "aplicacion web",
+    "social"
+  ],
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "nib": "^1.1.0"
   },
   "dependencies": {
-    "express": "3.3.*",
-    "node-gyp": "0.10.*",
-    "socket.io": "0.9.*",
-    "mongoose": "4.0.*"
-  },
-  "engines": {
-    "node": "0.10.*",
-    "npm": "1.3.*"
+    "express": "^4.13.3",
+    "mongoose": "^4.1.10",
+    "morgan": "^1.6.1",
+    "nib": "^1.1.0",
+    "path": "^0.12.7",
+    "socket.io": "^1.3.7",
+    "stylus": "^0.52.4"
   }
 }
